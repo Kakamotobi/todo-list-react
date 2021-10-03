@@ -48,9 +48,12 @@ class TodoList extends Component {
 	}
 
 	removeAll() {
-		this.setState({
-			todos: [],
-		});
+		this.setState(
+			{
+				todos: [],
+			},
+			() => localStorage.setItem("todos", [])
+		);
 	}
 
 	render() {
