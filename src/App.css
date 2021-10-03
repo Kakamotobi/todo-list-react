@@ -1,0 +1,14 @@
+@import "./colors.css";
+
+.App {
+	width: 100vw;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: linear-gradient(
+		to bottom right,
+		var(--drkGrey),
+		var(--drkOrange)
+	);
+}

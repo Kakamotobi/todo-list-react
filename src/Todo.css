@@ -1,0 +1,64 @@
+@import "./colors.css";
+
+.Todo {
+	width: 100%;
+	height: 2rem;
+	padding: 5px;
+	padding-left: 0;
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+
+.Todo__toggle-edit-btn,
+.Todo__remove-btn {
+	height: 20px;
+	width: 20px;
+	position: absolute;
+	right: -25px;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	transition: 250ms;
+}
+
+.Todo__remove-btn {
+	right: -50px;
+}
+
+.Todo__toggle-edit-btn > i,
+.Todo__remove-btn > i {
+	font-size: 1.2rem;
+}
+
+.Todo:hover > .Todo__toggle-edit-btn,
+.Todo:hover > .Todo__remove-btn {
+	transform: translateX(-60px);
+}
+
+/* Edit Form */
+.Todo__edit-form {
+	height: 100%;
+}
+
+.Todo__edit-input {
+	width: auto;
+	padding-left: 2px;
+	background: transparent;
+	border: none;
+	border-bottom: 1px solid var(--black);
+	outline: none;
+	font-size: 1rem;
+}
+
+.Todo__update-btn {
+	height: 20px;
+	width: 20px;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+}
+
+.Todo__update-btn > i {
+	font-size: 1.25rem;
+}

@@ -1,0 +1,6 @@
+html {
+	--black: rgb(0, 0, 0);
+	--drkGrey: rgba(0, 47, 75, 0.6);
+	--grey: rgb(82, 82, 82);
+	--drkOrange: rgba(219, 66, 36, 0.6);
+}
