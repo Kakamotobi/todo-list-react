@@ -1,0 +1,31 @@
+@import "./colors.css";
+
+.Footer {
+	width: 100%;
+	padding-right: 20px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.Footer__desc {
+	margin-right: 10px;
+	font-size: 0.8rem;
+}
+
+.Footer__clear-all-btn {
+	padding: 4px 5px;
+	background-size: 200% 200%;
+	background-image: linear-gradient(to right, var(--drkGrey), var(--drkOrange));
+	border: 1px solid var(--black);
+	border: none;
+	box-shadow: 1px 2px 3px 1px var(--drkGrey);
+	border-radius: 2px;
+	font-family: "Inter", sans-serif;
+	cursor: pointer;
+	transition: 200ms;
+}
+
+.Footer__clear-all-btn:hover {
+	background-position: right 10% center;
+}

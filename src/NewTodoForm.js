@@ -22,7 +22,7 @@ function NewTodoForm({ addTodo }) {
 				placeholder="Add new todo"
 			/>
 			<button className="NewTodoForm__add-btn" type="submit">
-				<i className="fas fa-plus"></i>
+				<i className="fas fa-plus" />
 			</button>
 		</form>
 	);

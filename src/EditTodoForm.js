@@ -22,7 +22,7 @@ function EditTodoForm({ id, todo, toggleIsEditing, updateTodo }) {
 				autoFocus
 			/>
 			<button className="Todo__update-btn">
-				<i className="far fa-save"></i>
+				<i className="far fa-save" />
 			</button>
 		</form>
 	);

@@ -30,14 +30,14 @@ function Todo({ id, todo, updateTodo, removeTodo }) {
 				type="button"
 				onClick={toggleEdit}
 			>
-				<i className="fas fa-edit"></i>
+				<i className="fas fa-edit" />
 			</button>
 			<button
 				className="Todo__remove-btn"
 				type="button"
 				onClick={handleRemoveTodo}
 			>
-				<i className="far fa-check-circle"></i>
+				<i className="far fa-check-circle" />
 			</button>
 		</li>
 	);
