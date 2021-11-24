@@ -1,25 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
+import useInputState from "./hooks/useInputState.js";
 import "./NewTodoForm.css";
 
 function NewTodoForm({ addTodo }) {
-	const [todo, setTodo] = useState("");
+	const [value, handleChange, reset] = useInputState("");
 
 	const handleSubmit = (evt) => {
 		evt.preventDefault();
-		todo.trim() !== "" && addTodo(todo);
-		setTodo("");
+		value.trim() !== "" && addTodo(value);
+		reset();
 	};
 
-	const handleChange = (evt) => {
-		setTodo(evt.target.value);
-	};
 	return (
 		<form className="NewTodoForm" onSubmit={handleSubmit}>
 			<input
 				className="NewTodoForm__input"
 				type="text"
 				name="todo"
-				value={todo}
+				value={value}
 				onChange={handleChange}
 				placeholder="Add new todo"
 			/>

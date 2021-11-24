@@ -1,17 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
+import useInputState from "./hooks/useInputState.js";
 
 function EditTodoForm({ id, todo, toggleIsEditing, updateTodo }) {
-	const [editedTodo, setEditedTodo] = useState(todo);
-
-	const handleChange = (evt) => {
-		setEditedTodo(evt.target.value);
-	};
+	const [value, handleChange, reset] = useInputState(todo);
 
 	const handleUpdateTodo = (evt) => {
 		evt.preventDefault();
-		updateTodo(id, editedTodo);
+		updateTodo(id, value);
+		reset();
 		toggleIsEditing(false);
-		setEditedTodo("");
 	};
 
 	return (
@@ -20,7 +17,7 @@ function EditTodoForm({ id, todo, toggleIsEditing, updateTodo }) {
 				className="Todo__edit-input"
 				type="text"
 				name="editedTodo"
-				value={editedTodo}
+				value={value}
 				onChange={handleChange}
 				autoFocus
 			/>
