@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { TodosContext } from "./context/TodosContext.js";
 import "./Footer.css";
 
-function Footer({ todos, removeAll }) {
+function Footer() {
+	const { todos, removeAll } = useContext(TodosContext);
+
 	return (
 		<footer className="Footer">
 			<em className="Footer__desc">

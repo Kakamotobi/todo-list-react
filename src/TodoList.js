@@ -1,18 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+import { TodosContext } from "./context/TodosContext.js";
 import Todo from "./Todo.js";
 import "./TodoList.css";
 
-function TodoList({ todos, updateTodo, removeTodo }) {
+function TodoList() {
+	const { todos } = useContext(TodosContext);
+
 	return (
 		<ul className="TodoList">
 			{todos.map((t) => (
-				<Todo
-					key={t.id}
-					id={t.id}
-					todo={t.todo}
-					updateTodo={updateTodo}
-					removeTodo={removeTodo}
-				/>
+				<Todo key={t.id} id={t.id} todo={t.todo} />
 			))}
 		</ul>
 	);

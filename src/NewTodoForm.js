@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import { TodosContext } from "./context/TodosContext.js";
 import useInputState from "./hooks/useInputState.js";
 import "./NewTodoForm.css";
 
-function NewTodoForm({ addTodo }) {
+function NewTodoForm() {
+	const { addTodo } = useContext(TodosContext);
+
 	const [value, handleChange, reset] = useInputState("");
 
 	const handleSubmit = (evt) => {

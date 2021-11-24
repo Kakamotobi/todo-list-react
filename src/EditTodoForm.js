@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { TodosContext } from "./context/TodosContext.js";
 import useInputState from "./hooks/useInputState.js";
 
-function EditTodoForm({ id, todo, toggleIsEditing, updateTodo }) {
+function EditTodoForm({ id, todo, toggleIsEditing }) {
+	const { updateTodo } = useContext(TodosContext);
+
 	const [value, handleChange, reset] = useInputState(todo);
 
 	const handleUpdateTodo = (evt) => {

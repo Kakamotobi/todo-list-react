@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { TodosContext } from "./context/TodosContext.js";
 import EditTodoForm from "./EditTodoForm.js";
 import "./Todo.css";
 
-function Todo({ id, todo, updateTodo, removeTodo }) {
+function Todo({ id, todo }) {
+	const { removeTodo } = useContext(TodosContext);
+
 	const [isEditing, toggleIsEditing] = useState(false);
 
 	const toggleEdit = () => {
@@ -16,12 +19,7 @@ function Todo({ id, todo, updateTodo, removeTodo }) {
 	return (
 		<li className="Todo">
 			{isEditing ? (
-				<EditTodoForm
-					id={id}
-					todo={todo}
-					toggleIsEditing={toggleIsEditing}
-					updateTodo={updateTodo}
-				/>
+				<EditTodoForm id={id} todo={todo} toggleIsEditing={toggleIsEditing} />
 			) : (
 				<p className="Todo__task">{todo}</p>
 			)}
