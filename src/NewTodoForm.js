@@ -1,46 +1,33 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import "./NewTodoForm.css";
 
-class NewTodoForm extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			todo: "",
-		};
+function NewTodoForm({ addTodo }) {
+	const [todo, setTodo] = useState("");
 
-		this.handleSubmit = this.handleSubmit.bind(this);
-		this.handleChange = this.handleChange.bind(this);
-	}
-
-	handleSubmit(evt) {
+	const handleSubmit = (evt) => {
 		evt.preventDefault();
-		evt.target.firstChild.value !== "" && this.props.addTodo(this.state.todo);
-		this.setState({ todo: "" });
-	}
+		todo.trim() !== "" && addTodo(todo);
+		setTodo("");
+	};
 
-	handleChange(evt) {
-		this.setState({
-			[evt.target.name]: evt.target.value,
-		});
-	}
-
-	render() {
-		return (
-			<form className="NewTodoForm" onSubmit={this.handleSubmit}>
-				<input
-					className="NewTodoForm__input"
-					type="text"
-					name="todo"
-					value={this.state.todo}
-					onChange={this.handleChange}
-					placeholder="Add new todo"
-				/>
-				<button className="NewTodoForm__add-btn" type="submit">
-					<i className="fas fa-plus"></i>
-				</button>
-			</form>
-		);
-	}
+	const handleChange = (evt) => {
+		setTodo(evt.target.value);
+	};
+	return (
+		<form className="NewTodoForm" onSubmit={handleSubmit}>
+			<input
+				className="NewTodoForm__input"
+				type="text"
+				name="todo"
+				value={todo}
+				onChange={handleChange}
+				placeholder="Add new todo"
+			/>
+			<button className="NewTodoForm__add-btn" type="submit">
+				<i className="fas fa-plus"></i>
+			</button>
+		</form>
+	);
 }
 
 export default NewTodoForm;
