@@ -4,7 +4,7 @@ import EditTodoForm from "./EditTodoForm.js";
 import "./Todo.css";
 
 function Todo({ id, todo }) {
-	const { removeTodo } = useContext(TodosContext);
+	const { dispatch } = useContext(TodosContext);
 
 	const [isEditing, toggleIsEditing] = useState(false);
 
@@ -13,7 +13,7 @@ function Todo({ id, todo }) {
 	};
 
 	const handleRemoveTodo = () => {
-		removeTodo(id);
+		dispatch({type: "REMOVE_TODO", id})
 	};
 
 	return (

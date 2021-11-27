@@ -4,13 +4,13 @@ import useInputState from "./hooks/useInputState.js";
 import "./NewTodoForm.css";
 
 function NewTodoForm() {
-	const { addTodo } = useContext(TodosContext);
+	const { dispatch } = useContext(TodosContext);
 
 	const [value, handleChange, reset] = useInputState("");
 
 	const handleSubmit = (evt) => {
 		evt.preventDefault();
-		value.trim() !== "" && addTodo(value);
+		value.trim() !== "" && dispatch({ type: "ADD_TODO", todo: value });
 		reset();
 	};
 

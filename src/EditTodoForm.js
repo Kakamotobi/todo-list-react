@@ -3,13 +3,13 @@ import { TodosContext } from "./context/TodosContext.js";
 import useInputState from "./hooks/useInputState.js";
 
 function EditTodoForm({ id, todo, toggleIsEditing }) {
-	const { updateTodo } = useContext(TodosContext);
+	const { dispatch } = useContext(TodosContext);
 
 	const [value, handleChange, reset] = useInputState(todo);
 
 	const handleUpdateTodo = (evt) => {
 		evt.preventDefault();
-		updateTodo(id, value);
+		dispatch({ type: "UPDATE_TODO", id, editedTodo: value });
 		reset();
 		toggleIsEditing(false);
 	};

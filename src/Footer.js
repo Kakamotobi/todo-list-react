@@ -3,7 +3,11 @@ import { TodosContext } from "./context/TodosContext.js";
 import "./Footer.css";
 
 function Footer() {
-	const { todos, removeAll } = useContext(TodosContext);
+	const { todos, dispatch } = useContext(TodosContext);
+
+	const handleRemoveAll = () => {
+		dispatch({ type: "REMOVE_ALL" });
+	};
 
 	return (
 		<footer className="Footer">
@@ -14,7 +18,7 @@ function Footer() {
 			<button
 				className="Footer__clear-all-btn"
 				type="button"
-				onClick={removeAll}
+				onClick={handleRemoveAll}
 			>
 				Clear All
 			</button>
