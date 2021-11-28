@@ -6,6 +6,8 @@ function Footer() {
 	const todos = useContext(TodosContext);
 	const dispatch = useContext(DispatchContext);
 
+	const remainingTodos = todos.filter((t) => !t.isComplete);
+
 	const handleRemoveAll = () => {
 		dispatch({ type: "REMOVE_ALL" });
 	};
@@ -13,7 +15,8 @@ function Footer() {
 	return (
 		<footer className="Footer">
 			<em className="Footer__desc">
-				You have <span className="Footer__remaining">{todos.length}</span> tasks
+				You have{" "}
+				<span className="Footer__remaining">{remainingTodos.length}</span> tasks
 				remaning.
 			</em>
 			<button
