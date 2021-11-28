@@ -8,6 +8,12 @@
 	display: flex;
 	align-items: center;
 	position: relative;
+	cursor: pointer;
+}
+
+.checked-off {
+	color: var(--drkGrey);
+	text-decoration: line-through;
 }
 
 .Todo__toggle-edit-btn,

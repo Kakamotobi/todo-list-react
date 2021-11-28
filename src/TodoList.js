@@ -9,7 +9,7 @@ function TodoList() {
 	return (
 		<ul className="TodoList">
 			{todos.map((t) => (
-				<Todo key={t.id} id={t.id} todo={t.todo} />
+				<Todo key={t.id} id={t.id} todo={t.todo} isComplete={t.isComplete}/>
 			))}
 		</ul>
 	);
