@@ -4,7 +4,7 @@ import todosReducer from "../reducers/todosReducer.js";
 const TodosContext = createContext();
 
 const TodosProvider = (props) => {
-	const initialTodos = JSON.parse(window.localStorage.getItem("todos") || "[]");
+	const initialTodos = JSON.parse(window.localStorage.getItem("todos")) || [];
 	const [todos, dispatch] = useReducer(todosReducer, initialTodos);
 
 	useEffect(() => {
