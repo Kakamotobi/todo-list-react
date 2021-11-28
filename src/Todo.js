@@ -39,7 +39,7 @@ function Todo({ id, todo, isComplete }) {
 				type="button"
 				onClick={handleRemoveTodo}
 			>
-				<i className="far fa-check-circle" />
+				<i className="fas fa-trash" />
 			</button>
 		</li>
 	);
