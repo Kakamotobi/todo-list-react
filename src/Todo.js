@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, memo } from "react";
 import { DispatchContext } from "./context/TodosContext.js";
 import EditTodoForm from "./EditTodoForm.js";
 import "./Todo.css";
@@ -41,4 +41,4 @@ function Todo({ id, todo }) {
 	);
 }
 
-export default Todo;
+export default memo(Todo);
