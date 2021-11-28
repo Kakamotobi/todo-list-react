@@ -4,7 +4,7 @@ import Todo from "./Todo.js";
 import "./TodoList.css";
 
 function TodoList() {
-	const { todos } = useContext(TodosContext);
+	const todos = useContext(TodosContext);
 
 	return (
 		<ul className="TodoList">

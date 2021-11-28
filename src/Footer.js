@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
-import { TodosContext } from "./context/TodosContext.js";
+import { TodosContext, DispatchContext } from "./context/TodosContext.js";
 import "./Footer.css";
 
 function Footer() {
-	const { todos, dispatch } = useContext(TodosContext);
+	const todos = useContext(TodosContext);
+	const dispatch = useContext(DispatchContext);
 
 	const handleRemoveAll = () => {
 		dispatch({ type: "REMOVE_ALL" });

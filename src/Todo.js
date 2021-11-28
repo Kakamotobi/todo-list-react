@@ -1,10 +1,10 @@
 import React, { useState, useContext } from "react";
-import { TodosContext } from "./context/TodosContext.js";
+import { DispatchContext } from "./context/TodosContext.js";
 import EditTodoForm from "./EditTodoForm.js";
 import "./Todo.css";
 
 function Todo({ id, todo }) {
-	const { dispatch } = useContext(TodosContext);
+	const dispatch = useContext(DispatchContext);
 
 	const [isEditing, toggleIsEditing] = useState(false);
 
@@ -13,7 +13,7 @@ function Todo({ id, todo }) {
 	};
 
 	const handleRemoveTodo = () => {
-		dispatch({type: "REMOVE_TODO", id})
+		dispatch({ type: "REMOVE_TODO", id });
 	};
 
 	return (

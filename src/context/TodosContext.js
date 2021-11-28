@@ -2,6 +2,7 @@ import React, { createContext, useReducer, useEffect } from "react";
 import todosReducer from "../reducers/todosReducer.js";
 
 const TodosContext = createContext();
+const DispatchContext = createContext();
 
 const TodosProvider = (props) => {
 	const initialTodos = JSON.parse(window.localStorage.getItem("todos")) || [];
@@ -12,10 +13,12 @@ const TodosProvider = (props) => {
 	});
 
 	return (
-		<TodosContext.Provider value={{ todos, dispatch }}>
-			{props.children}
+		<TodosContext.Provider value={todos}>
+			<DispatchContext.Provider value={dispatch}>
+				{props.children}
+			</DispatchContext.Provider>
 		</TodosContext.Provider>
 	);
 };
 
-export { TodosContext, TodosProvider };
+export { TodosContext, DispatchContext, TodosProvider };
