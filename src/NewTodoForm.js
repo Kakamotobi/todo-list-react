@@ -10,7 +10,7 @@ function NewTodoForm() {
 
 	const handleSubmit = (evt) => {
 		evt.preventDefault();
-		value.trim() !== "" && dispatch({ type: "ADD_TODO", todo: value });
+		value.trim() !== "" && dispatch({ type: "ADD_TODO", todo: value.trim() });
 		reset();
 	};
 
@@ -24,7 +24,11 @@ function NewTodoForm() {
 				onChange={handleChange}
 				placeholder="Add new todo"
 			/>
-			<button className="NewTodoForm__add-btn" type="submit">
+			<button
+				className="NewTodoForm__add-btn"
+				type="submit"
+				disabled={value.trim() === "" && true}
+			>
 				<i className="fas fa-plus" />
 			</button>
 		</form>

@@ -37,19 +37,6 @@
 }
 
 .NewTodoForm__add-btn i {
-	color: var(--grey);
 	transition: 200ms;
 	font-size: 1.25rem;
-}
-
-.NewTodoForm__add-btn i:hover {
-	color: var(--black);
-	opacity: 1;
-}
-
-/* --- */
-
-.todo-list__add-btn.active {
-	opacity: 1;
-	pointer-events: auto;
 }
