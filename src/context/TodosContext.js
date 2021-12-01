@@ -1,16 +1,12 @@
-import React, { createContext, useReducer, useEffect } from "react";
+import React, { createContext } from "react";
+import useLocalStorageReducer from "../hooks/useLocalStorageReducer.js";
 import todosReducer from "../reducers/todosReducer.js";
 
 const TodosContext = createContext();
 const DispatchContext = createContext();
 
 const TodosProvider = (props) => {
-	const initialTodos = JSON.parse(window.localStorage.getItem("todos")) || [];
-	const [todos, dispatch] = useReducer(todosReducer, initialTodos);
-
-	useEffect(() => {
-		window.localStorage.setItem("todos", JSON.stringify(todos));
-	});
+	const [todos, dispatch] = useLocalStorageReducer("todos", [], todosReducer);
 
 	return (
 		<TodosContext.Provider value={todos}>
