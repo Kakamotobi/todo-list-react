@@ -2,12 +2,8 @@
 
 ## Description
 
-- Create a todo list.
-
-## Features
-
-- Users can add, edit, and clear todos.
-- Users can access their todo list again through local storage.
+- Create and manage a todo list.
+- Users can add, edit, check-off and remove todos.
 
 ## Demo
 
@@ -17,17 +13,22 @@
 
 Live-site URL: https://todo-list-react-taupe.vercel.app/
 
-## My Process
+## Development Process
 
 ### Built With
 
 - React
 
-## What I Learned/Applied
+### Applied Concepts
 
-- Local Storage
+- Local Storage.
+  - Persistence of todo list achieved through use of local storage.
 - React props, states, forms, events.
+- React hooks, reducers, context.
+  - Used custom hooks for input control and local storage.
+  - Used reducer along with context for state managment.
 
 ## Updates
 
 - Upon user request, added functionality to edit an existing todo.
+- Upon user request, added check-off feature.
